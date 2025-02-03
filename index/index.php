@@ -27,12 +27,11 @@ var_dump($compte2);
 @param float $somme
 */
 
-public function_construct(string $nom, float $somme) {
+public function __construct(string $nom, float $somme) {
     //on attribue le nom a la propriété titulaire de l'instance créée 
     $this->titulaire = $nom;
 
     //on attribue la somme a la proppriété solde a l'intance créée
-    $this->solde $somme;
+    $this->solde = $somme;
 }
-
 ?>
