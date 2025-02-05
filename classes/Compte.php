@@ -31,19 +31,42 @@ class Compte
 
     /**
      * @param float $somme déposé
-     * @param void 
+     * @param void
      * 
      */
 
-    public function deposer(float $somme) 
+    public function deposer(float $somme)
     {
         // on verifie si le montant est posotif
-        if($somme > 0){
-            $this ->solde += $somme;
-            }
+        if ($somme > 0) {
+            $this->solde += $somme;
+        }
+
+        /**
+         * Retourne une chaine de caractere affichant le sodle
+         *
+         * @return string
+         */
     }
     public function voirSolde()
     {
-        echo "Le solde du compte est de $this->solde"
+        return "Le solde du compte est de $this->solde euros";
+    }
+
+
+    /**
+     *retire un montant du solde du compte 
+     * @param float $somme montant à retirer
+     * @return void
+     */
+
+    public function retirer(float $somme)
+    {
+        // On verifie le montant et mle sodle 
+        if ($somme > 0 && $this->solde >= $somme) {
+            $this->solde -= $somme;
+        } else {
+            echo "Montant invalide ou solde insuffisant ";
+        }
     }
 }
